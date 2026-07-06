@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:1000px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.left{
+    width:50%;
+}
+
+.left h1{
+    color:#1877f2;
+    font-size:58px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.left p{
+    font-size:28px;
+    color:#1c1e21;
+    line-height:38px;
+}
+
+.right{
+    width:400px;
+}
+
+.login-box{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.login-box input{
+    width:100%;
+    padding:15px;
+    margin:8px 0;
+    border:1px solid #dddfe2;
+    border-radius:6px;
+    font-size:17px;
+    outline:none;
+}
+
+.login-box input:focus{
+    border:1px solid #1877f2;
+}
+
+.login-btn{
+    width:100%;
+    background:#1877f2;
+    color:white;
+    border:none;
+    padding:14px;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#166fe5;
+}
+
+.forgot{
+    display:block;
+    text-decoration:none;
+    color:#1877f2;
+    margin:18px 0;
+    font-size:14px;
+}
+
+hr{
+    margin:20px 0;
+    border:1px solid #dadde1;
+}
+
+.create-btn{
+    background:#42b72a;
+    color:white;
+    border:none;
+    padding:14px 20px;
+    font-size:17px;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.create-btn:hover{
+    background:#36a420;
+}
+
+.page{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+}
+
+.page b{
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+    text-align:center;
+    width:90%;
+}
+
+.left{
+    width:100%;
+    margin-bottom:40px;
+}
+
+.left h1{
+    font-size:48px;
+}
+
+.left p{
+    font-size:22px;
+    line-height:32px;
+}
+
+.right{
+    width:100%;
+    max-width:400px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="left">
+<h1>facebook</h1>
+<p>
+Facebook helps you connect and share with the people in your life.
+</p>
+</div>
+
+<div class="right">
+
+<div class="login-box">
+
+<form>
+
+<input
+type="text"
+placeholder="Email address or phone number"
+required
+>
+
+<input
+type="password"
+placeholder="Password"
+required
+>
+
+<button class="login-btn" type="submit">
+Log In
+</button>
+
+<a href="#" class="forgot">
+Forgotten password?
+</a>
+
+<hr>
+
+<button class="create-btn" type="button">
+Create New Account
+</button>
+
+</form>
+
+</div>
+
+<div class="page">
+<b>Create a Page</b> for a celebrity, brand or business.
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
