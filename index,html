@@ -3,29 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facebook Login</title>
+<title>Facebook Style Login</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family:Helvetica, Arial, sans-serif;
 }
 
 body{
     background:#f0f2f5;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 
 .container{
-    width:1000px;
+    max-width:1000px;
+    min-height:100vh;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:20px;
 }
 
 .left{
@@ -34,33 +33,31 @@ body{
 
 .left h1{
     color:#1877f2;
-    font-size:58px;
-    font-weight:bold;
+    font-size:60px;
     margin-bottom:10px;
 }
 
 .left p{
     font-size:28px;
     color:#1c1e21;
-    line-height:38px;
+    line-height:36px;
 }
 
 .right{
-    width:400px;
+    width:396px;
 }
 
 .login-box{
     background:#fff;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
-    text-align:center;
+    box-shadow:0 2px 12px rgba(0,0,0,.2);
 }
 
 .login-box input{
     width:100%;
-    padding:15px;
-    margin:8px 0;
+    padding:14px;
+    margin-bottom:15px;
     border:1px solid #dddfe2;
     border-radius:6px;
     font-size:17px;
@@ -68,20 +65,19 @@ body{
 }
 
 .login-box input:focus{
-    border:1px solid #1877f2;
+    border-color:#1877f2;
 }
 
 .login-btn{
     width:100%;
+    padding:14px;
+    border:none;
     background:#1877f2;
     color:white;
-    border:none;
-    padding:14px;
     font-size:20px;
     font-weight:bold;
     border-radius:6px;
     cursor:pointer;
-    transition:.3s;
 }
 
 .login-btn:hover{
@@ -90,27 +86,30 @@ body{
 
 .forgot{
     display:block;
+    text-align:center;
+    margin:18px 0;
     text-decoration:none;
     color:#1877f2;
-    margin:18px 0;
     font-size:14px;
 }
 
 hr{
     margin:20px 0;
-    border:1px solid #dadde1;
+    border:none;
+    border-top:1px solid #ddd;
 }
 
 .create-btn{
+    display:block;
+    margin:auto;
+    padding:14px 18px;
     background:#42b72a;
     color:white;
     border:none;
-    padding:14px 20px;
+    border-radius:6px;
     font-size:17px;
     font-weight:bold;
-    border-radius:6px;
     cursor:pointer;
-    transition:.3s;
 }
 
 .create-btn:hover{
@@ -118,21 +117,24 @@ hr{
 }
 
 .page{
-    text-align:center;
     margin-top:25px;
+    text-align:center;
     font-size:14px;
 }
 
-.page b{
-    cursor:pointer;
+.message{
+    margin-top:15px;
+    text-align:center;
+    color:green;
+    font-weight:bold;
 }
 
 @media(max-width:900px){
 
 .container{
     flex-direction:column;
+    justify-content:center;
     text-align:center;
-    width:90%;
 }
 
 .left{
@@ -141,12 +143,11 @@ hr{
 }
 
 .left h1{
-    font-size:48px;
+    font-size:50px;
 }
 
 .left p{
-    font-size:22px;
-    line-height:32px;
+    font-size:24px;
 }
 
 .right{
@@ -173,19 +174,19 @@ Facebook helps you connect and share with the people in your life.
 
 <div class="login-box">
 
-<form>
+<form id="loginForm">
 
 <input
 type="text"
+id="email"
 placeholder="Email address or phone number"
-required
->
+required>
 
 <input
 type="password"
+id="password"
 placeholder="Password"
-required
->
+required>
 
 <button class="login-btn" type="submit">
 Log In
@@ -201,6 +202,8 @@ Forgotten password?
 Create New Account
 </button>
 
+<div class="message" id="message"></div>
+
 </form>
 
 </div>
@@ -212,6 +215,25 @@ Create New Account
 </div>
 
 </div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let email=document.getElementById("email").value.trim();
+    let password=document.getElementById("password").value.trim();
+
+    if(email==="" || password===""){
+        alert("Please fill all fields.");
+        return;
+    }
+
+    document.getElementById("message").innerHTML="✔ Login Successful (Demo Only)";
+});
+
+</script>
 
 </body>
 </html>
